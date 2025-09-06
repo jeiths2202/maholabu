@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="game_coding_title">게임 코딩</title>
+    <link rel="stylesheet" href="css/game-platform.css">
+    <script src="../static-content/i18n.js"></script>
+    <script src="../static-content/game-i18n.js"></script>
+</head>
+<body>
+    <div class="game-platform">
+        <!-- Header -->
+        <header class="platform-header">
+            <h1 data-i18n="game_coding_title">게임 코딩</h1>
+            <p data-i18n="game_coding_subtitle">게임으로 배우는 코딩의 세계</p>
+        </header>
+
+        <!-- Game Selection Grid -->
+        <main class="games-grid">
+            <div class="game-card featured" onclick="startGame('roblox-scratch-adventure')">
+                <div class="game-preview">
+                    <div class="preview-3d">
+                        <div class="cube"></div>
+                        <div class="cube"></div>
+                        <div class="cube"></div>
+                    </div>
+                </div>
+                <div class="game-info">
+                    <h3 data-i18n="roblox_adventure_title">3D 로블록스 어드벤처</h3>
+                    <p data-i18n="roblox_adventure_desc">스크래치형 코딩으로 3D 세계를 탐험하세요!</p>
+                    <div class="game-meta">
+                        <span class="difficulty" data-i18n="difficulty_beginner">초급</span>
+                        <span class="target-age" data-i18n="target_age_elementary">초등 5-6학년</span>
+                        <span class="levels">10 단계</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-card coming-soon">
+                <div class="game-preview">
+                    <div class="coming-soon-icon">🚀</div>
+                </div>
+                <div class="game-info">
+                    <h3 data-i18n="space_coding_title">우주 코딩 탐험</h3>
+                    <p data-i18n="space_coding_desc">우주선을 조종하며 알고리즘을 배워보세요!</p>
+                    <div class="game-meta">
+                        <span class="coming-soon-badge" data-i18n="coming_soon">출시 예정</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-card coming-soon">
+                <div class="game-preview">
+                    <div class="coming-soon-icon">🏰</div>
+                </div>
+                <div class="game-info">
+                    <h3 data-i18n="castle_defense_title">성 방어 코딩</h3>
+                    <p data-i18n="castle_defense_desc">코딩으로 성을 방어하는 전략 게임!</p>
+                    <div class="game-meta">
+                        <span class="coming-soon-badge" data-i18n="coming_soon">출시 예정</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="platform-footer">
+            <button onclick="goBack()" class="back-button" data-i18n="back_to_main">메인으로 돌아가기</button>
+        </footer>
+    </div>
+
+    <script src="js/game-platform.js"></script>
+</body>
+</html>

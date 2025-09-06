@@ -1,0 +1,262 @@
+/* Game Coding Platform Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.game-platform {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+.platform-header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.platform-header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    background: linear-gradient(45deg, #ffd700, #ffaa00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.platform-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Games Grid */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Game Card Styles */
+.game-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.game-card.featured {
+    border: 3px solid #ffd700;
+    position: relative;
+}
+
+.game-card.featured::before {
+    content: '★ FEATURED';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ffd700;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.game-preview {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 3D Preview Animation */
+.preview-3d {
+    display: flex;
+    gap: 10px;
+    perspective: 1000px;
+}
+
+.cube {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, #00cec9, #00b894);
+    border-radius: 8px;
+    animation: float 2s ease-in-out infinite;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.cube:nth-child(2) {
+    animation-delay: 0.5s;
+    background: linear-gradient(45deg, #fd79a8, #e84393);
+}
+
+.cube:nth-child(3) {
+    animation-delay: 1s;
+    background: linear-gradient(45deg, #fdcb6e, #e17055);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotateY(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotateY(180deg);
+    }
+}
+
+.coming-soon-icon {
+    font-size: 4rem;
+    opacity: 0.5;
+}
+
+.game-info {
+    padding: 20px;
+}
+
+.game-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #2d3436;
+}
+
+.game-info p {
+    color: #636e72;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.game-meta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.game-meta span {
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.difficulty {
+    background: #00b894;
+    color: white;
+}
+
+.target-age {
+    background: #74b9ff;
+    color: white;
+}
+
+.levels {
+    background: #fdcb6e;
+    color: #2d3436;
+}
+
+.coming-soon-badge {
+    background: #ddd;
+    color: #636e72;
+}
+
+/* Coming Soon Cards */
+.coming-soon {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.coming-soon:hover {
+    transform: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+.platform-footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.back-button {
+    background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.back-button:hover {
+    transform: scale(1.05);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .platform-header h1 {
+        font-size: 2rem;
+    }
+    
+    .games-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .game-card {
+        margin: 0 10px;
+    }
+    
+    .game-preview {
+        height: 150px;
+    }
+    
+    .cube {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-platform {
+        padding: 15px;
+    }
+    
+    .platform-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .platform-header p {
+        font-size: 1rem;
+    }
+    
+    .game-info h3 {
+        font-size: 1.3rem;
+    }
+    
+    .game-meta {
+        justify-content: center;
+    }
+}
